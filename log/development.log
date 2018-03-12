@@ -453,3 +453,22 @@ Processing by StudentsController#update as HTML
   [1m[36m (31.8ms)[0m  [1mcommit transaction[0m
 Redirected to http://192.241.155.248:45404/students/1
 Completed 302 Found in 48ms (ActiveRecord: 32.8ms)
+
+
+Started GET "/students/1" for 72.252.198.128 at 2018-03-12 22:44:25 +0000
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered students/show.html.erb within layouts/application (21.2ms)
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+    1: <h1><%= @student.to_s %></h1>
+  app/models/student.rb:3:in `to_s'
+  app/views/students/show.html.erb:1:in `_app_views_students_show_html_erb___3175513176864664108_11372340'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (24.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (9.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (94.8ms)
