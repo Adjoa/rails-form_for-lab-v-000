@@ -30,5 +30,4 @@ class SchoolClassesController < ApplicationController
     params.require(:school_class).permit(*args)
   end
 
-
 end
