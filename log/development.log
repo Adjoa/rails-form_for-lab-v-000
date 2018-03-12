@@ -487,3 +487,18 @@ ActionView::Template::Error (undefined method `+' for nil:NilClass):
   app/views/students/show.html.erb:1:in `_app_views_students_show_html_erb___3175513176864664108_11372340'
 
 
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (25.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (13.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (107.4ms)
+
+
+Started PATCH "/students/1" for 72.252.198.128 at 2018-03-12 22:45:36 +0000
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JoCrPYmrJnegOxknFaL0DT2uKN70Nt5Mdj9ewmeTBW/52QlwQw0z+esi5oZa8wyf3Rf48GhIwv/3x8m416fFJA==", "student"=>{"first_name"=>"Adjoa", "last_name"=>"Walt"}, "commit"=>"Update Student", "id"=>"1"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  UPDATE "students" SET "first_name" = ?, "last_name" = ?, "updated_at" = ? WHERE "students"."id" = ?  [["first_name", "Adjoa"], ["last_name", "Walt"], ["updated_at", "2018-03-12 22:45:36.628819"], ["id", 1]]
+  [1m[36m (21.6ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.241.155.248:45404/students/1
+Completed 302 Found in 46ms (ActiveRecord: 22.9ms)
