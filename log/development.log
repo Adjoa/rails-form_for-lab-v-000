@@ -374,3 +374,23 @@ Started GET "/assets/turbolinks.self-2db6ec539b9190f75e1d477b305df53d12904d5cafd
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 72.252.198.128 at 2018-03-12 22:12:56 +0000
+
+
+Started GET "/students/1/edit" for 72.252.198.128 at 2018-03-12 22:15:49 +0000
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered students/edit.html.erb within layouts/application (23.7ms)
+Completed 500 Internal Server Error in 90ms (ActiveRecord: 7.7ms)
+
+ActionView::Template::Error (undefined method `merge' for "Adjoa":String):
+    1: <%= form_for(@student) do |f| %>
+    2:   <label>First Name</label><br>
+    3:   <%= f.text_field :first_name, @student.first_name %><br>
+    4: 
+    5:   <label>Last Name</label><br>
+    6:   <%= f.text_field :last_name, @student.last_name %><br>
+  app/views/students/edit.html.erb:3:in `block in _app_views_students_edit_html_erb___1582492983881190971_69824899720880'
+  app/views/students/edit.html.erb:1:in `_app_views_students_edit_html_erb___1582492983881190971_69824899720880'
+
+
