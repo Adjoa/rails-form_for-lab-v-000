@@ -425,3 +425,31 @@ Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bd
   [1m[35mStudent Load (4.0ms)[0m  SELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1
 DEPRECATION WARNING: You are passing an instance of ActiveRecord::Base to `find`. Please pass the id of the object by calling `.id`. (called from irb_binding at (irb):5)
   [1m[36mStudent Load (0.3ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 1]]
+
+
+Started GET "/students/1/" for 72.252.198.128 at 2018-03-12 22:43:52 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mStudent Load (0.3ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered students/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 1408ms (Views: 1295.6ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/students/1/edit" for 72.252.198.128 at 2018-03-12 22:44:01 +0000
+Processing by StudentsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered students/edit.html.erb within layouts/application (46.0ms)
+Completed 200 OK in 89ms (Views: 86.3ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/students/1" for 72.252.198.128 at 2018-03-12 22:44:24 +0000
+Processing by StudentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JoCrPYmrJnegOxknFaL0DT2uKN70Nt5Mdj9ewmeTBW/52QlwQw0z+esi5oZa8wyf3Rf48GhIwv/3x8m416fFJA==", "student"=>{"first_name"=>"Adjoa", "last_name"=>"Walt"}, "commit"=>"Update Student", "id"=>"1"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE "students" SET "first_name" = ?, "last_name" = ?, "updated_at" = ? WHERE "students"."id" = ?  [["first_name", nil], ["last_name", nil], ["updated_at", "2018-03-12 22:44:24.461509"], ["id", 1]]
+  [1m[36m (31.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://192.241.155.248:45404/students/1
+Completed 302 Found in 48ms (ActiveRecord: 32.8ms)
