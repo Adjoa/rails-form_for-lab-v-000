@@ -421,3 +421,7 @@ Started GET "/assets/turbolinks.self-2db6ec539b9190f75e1d477b305df53d12904d5cafd
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 72.252.198.128 at 2018-03-12 22:16:36 +0000
+  [1m[36mStudent Load (7.9ms)[0m  [1mSELECT "students".* FROM "students"[0m
+  [1m[35mStudent Load (4.0ms)[0m  SELECT  "students".* FROM "students"  ORDER BY "students"."id" ASC LIMIT 1
+DEPRECATION WARNING: You are passing an instance of ActiveRecord::Base to `find`. Please pass the id of the object by calling `.id`. (called from irb_binding at (irb):5)
+  [1m[36mStudent Load (0.3ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 1]]
