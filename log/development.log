@@ -502,3 +502,11 @@ Processing by StudentsController#update as HTML
   [1m[36m (21.6ms)[0m  [1mcommit transaction[0m
 Redirected to http://192.241.155.248:45404/students/1
 Completed 302 Found in 46ms (ActiveRecord: 22.9ms)
+
+
+Started GET "/students/1" for 72.252.198.128 at 2018-03-12 22:45:37 +0000
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mStudent Load (0.2ms)[0m  SELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered students/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 89ms (Views: 80.1ms | ActiveRecord: 0.2ms)
