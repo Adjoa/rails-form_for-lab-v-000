@@ -5,7 +5,6 @@ class StudentsController < ApplicationController
     end
 
     def create
-      raise params.inspect
       @student = Student.new(student_params(:first_name, :last_name))
       @student.save
       redirect_to student_path(@student)
