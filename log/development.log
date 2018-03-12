@@ -246,3 +246,8 @@ Started GET "/assets/turbolinks.self-2db6ec539b9190f75e1d477b305df53d12904d5cafd
 
 
 Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for 72.252.198.128 at 2018-03-12 22:08:53 +0000
+
+
+Started GET "/students/new" for 72.252.198.128 at 2018-03-12 22:10:49 +0000
+Processing by StudentsController#new as HTML
+  Rendered students/new.html.erb within layouts/application (12.4ms)
